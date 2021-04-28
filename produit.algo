@@ -1,0 +1,36 @@
+PROCEDURE prod-sa(v1:ARRAY_OF FLOAT[3],v2: ARRAY_OF FLOAT[3], var ps : FLOAT)
+VAR
+  i:INTEGER;  
+BEGIN
+    ps:=0;
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps+v1[i]*v2[i];
+    END_FOR
+    IF (ps=0) THEN
+        write ("les deux vecteurs sont orthogonaux")
+    ELSE
+        write ("ne sont pas orthogonaux")
+    END_IF
+END
+ALGORITHM produit-scalaire
+VAR
+    v1 : ARRAY_OF FLOAT [3] ;
+    v2:ARRAY_OF FLOAT [3];
+    k:INTEGER :=0;
+    i,ps:integer;
+BEGIN
+    write("donnez le nombre des pairs de vecteurs");
+    read (n);
+    REPEAT
+    write("type v1");
+    read(v1);
+    write("type v2");
+    read(v2);
+    prod-sa(v1,v2)
+    k:=k+1;
+    UNTIL (k=n)
+
+    
+    
+
+END

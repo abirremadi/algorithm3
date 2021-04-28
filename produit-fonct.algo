@@ -1,0 +1,30 @@
+FUNCTION prod-sca( v1:ARRAY_OF FLOAT[3]  , v2: ARRAY_OF FLOAT[3];) : float
+VAR
+    ps:float:=0;
+    i:integer;
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        ps:=ps+v1[i]*v2[i];
+    END_FOR
+    RETURN ps ;
+ALGORITHM produit-scalaire
+VAR
+    n:INTEGER:=1;
+    k:INTEGER;
+    product-sca:FLOAT:=0;
+BEGIN
+    write("donnez le nombre de pairs")
+    read(n)
+    REPEAT
+        write("type v1");
+        read(v1);
+        write("type v2");
+        read(v2);
+        ps:= prod-sca(v1,v2); 
+    UNTIL (k=n)
+    IF (ps=0) THEN
+        write ("les deux vecteurs sont orthogonaux");
+    ELSE
+        write ("ne sont pas orthogonaux");
+    END_IF
+END
